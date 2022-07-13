@@ -1,0 +1,194 @@
+@import '/src/Variables/Variables.scss';
+
+.form {
+      margin: 1rem auto;
+      height: 16rem;
+      width: 32rem;
+      padding-top:1rem ;
+      transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+ 
+      // outline: 1px black solid;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin: 0 .5rem;
+}
+
+form.invalid p{
+  color: rgb(209, 105, 105);
+}
+
+.labelInv {
+  color: transparent;
+}
+
+.labelInv.invalid {
+  color: red;
+}
+
+
+
+
+
+.control {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem auto;
+}
+
+form > label, input, button {
+      margin: .5rem .5rem;
+}
+
+form > label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $gray;
+    }
+
+    .form__field {
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid $gray;
+      outline: 0;
+      font-size: 1rem;
+      color: grey;
+      padding: 7px 0;
+      background: transparent;
+      transition: border-color 0.2s;
+    
+      &::placeholder {
+      //   color: transparent;
+      opacity: 30%;
+      }
+    
+      &:placeholder-shown ~ .form__label {
+        font-size: 1rem;
+        cursor: text;
+        top: 20px;
+      }
+    }
+
+
+.form__field:focus {
+      ~ .form__label {
+        position: relative;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $primary;
+        font-weight:700;    
+      }
+      padding-bottom: 6px;  
+      font-weight: 700;
+      border-width: 3px;
+      border-image: linear-gradient(to right, $primary,$secondary);
+      border-image-slice: 1;
+    }
+////this is for the second form///////
+
+
+.form__field2 {
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid $gray;
+      outline: 0;
+      font-size: 1rem;
+      color: grey;
+      padding: 7px 0;
+      // background: transparent;
+      transition: border-color 0.2s;
+    
+      &::placeholder {
+      //   color: transparent;
+      opacity: 30%;
+      }
+    
+      &:placeholder-shown ~ .form__label2 {
+        font-size: 1rem;
+        cursor: text;
+        top: 20px;
+      }
+    }
+
+
+
+
+    .form__field2:focus {
+      ~ .form__label2 {
+        position: relative;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $primary;
+        font-weight:700;    
+      }
+      padding-bottom: 6px;  
+      font-weight: 700;
+      border-width: 3px;
+      border-image: linear-gradient(to right, $primary,$secondary);
+      border-image-slice: 1;
+    }
+
+    ////// form animation
+    .form {
+      position: relative;
+      transition: 2000ms;
+      background: white;
+      box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+      transition: all .4s ease;
+      -webkit-transition: all .4s ease;
+     
+    }
+ 
+    .form:hover::before{
+      transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+       content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      background: linear-gradient(45deg, #a7a896, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+      display: block;
+      background-size: 400%;
+      width: calc(100% + 5px);
+      height: calc(100% + 5px);
+      z-index: -1;
+      // animation: glower 50s linear infinite;
+      
+    }
+
+    
+    
+    @keyframes glower {
+      0% {
+        background-position: 0 0;
+      }
+      
+      50% {
+        background-position: 400% 0;
+      }
+      
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+
+
+    
+  
+   

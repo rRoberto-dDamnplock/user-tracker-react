@@ -1,0 +1,31 @@
+@import '/src/Variables/Variables.scss';
+
+
+h1{
+      margin: 0;
+	color: white;
+}
+
+.header {
+   height: 5rem;   
+   width: 100%;
+  
+   padding-top:.5rem ;
+   text-align: center;
+   color: $fontColor;
+   background: linear-gradient(-45deg, #ce5151, #552099, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

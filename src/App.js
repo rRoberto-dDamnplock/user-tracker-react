@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/UI/Header/Header';
+// import Card from './components/Card/Card'
+import UserForm from './components/UserForm/UserForm';
+ import UserOutput from './components/UserOutput/UserOutput';
 import './App.css';
 
 function App() {
+  const [data, setData ] = useState([
+    {
+      Name: 'Johny',
+      Age: '15',
+      id: '0.885'
+    },
+  
+    {
+      Name: 'Micheal',
+      Age: '7',
+      id: '0.454'
+    }
+  ])
+
+  const addDataHandler = (enteredName, enteredAge) => {
+    setData(prevData => {
+      const updatedGoals = [...prevData];
+      updatedGoals.unshift({ 
+        Name: enteredName,
+        Age: enteredAge,
+         id: Math.random().toString() });
+  
+      return updatedGoals;
+    });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <UserForm onAddData={addDataHandler}/>
+   <UserOutput users={data} />
     </div>
   );
 }
