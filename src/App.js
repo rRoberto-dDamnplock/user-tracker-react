@@ -7,17 +7,17 @@ import './App.css';
 
 function App() {
   const [data, setData ] = useState([
-    {
-      Name: 'Johny',
-      Age: '15',
-      id: '0.885'
-    },
+    // {
+    //   Name: 'Johny',
+    //   Age: '15',
+    //   id: '0.885'
+    // },
   
-    {
-      Name: 'Micheal',
-      Age: '7',
-      id: '0.454'
-    }
+    // {
+    //   Name: 'Micheal',
+    //   Age: '7',
+    //   id: '0.454'
+    // }
   ])
 
   const addDataHandler = (enteredName, enteredAge) => {
@@ -32,11 +32,23 @@ function App() {
     });
   }
 
+let content = (
+  <p style={{textAlign: "center", paddingTop: '1rem'}}>No current Users</p>
+)
+
+if(data.length > 0){
+  content = (
+    <UserOutput users={data} />
+  )
+}
+  
   return (
     <div className="App">
       <Header/>
       <UserForm onAddData={addDataHandler}/>
-   <UserOutput users={data} />
+  {content}
+  
+   
     </div>
   );
 }

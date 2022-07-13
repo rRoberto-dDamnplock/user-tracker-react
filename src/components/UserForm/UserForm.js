@@ -24,7 +24,7 @@ const UserForm = (props) => {
       
       const submitHandler =(event) => {
             event.preventDefault()
-            // props.onAddData(enteredName, enteredAge)
+          
             if( enteredAge.trim().length === 0) {
                   setIsValid(false);
                   return;

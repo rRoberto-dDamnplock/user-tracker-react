@@ -1,22 +1,50 @@
 @import '/src/Variables/Variables.scss';
 
 
-h1{
-      margin: 0;
+h1 {
+	margin: 0;
+	text-shadow: 1px 1px 1px grey,
+			 2px 2px 1px grey,
+			 3px 3px 0px grey,
+			 4px 4px 0px grey,
+			 5px 5px 0px grey,
+			 6px 6px 2px grey,
+			 7px 7px 2px grey,
+			 8px 8px 2px grey,
+			 9px 9px 2px grey,                            
+			 10px 10px 0px grey;
 	color: white;
-}
+	font-size: 50px;
+	
+    }
+
+    @media (max-width: 768px) {
+	h1{
+	  font-size: 45px;
+	 margin: 1rem 1rem;
+	}
+    
+    }
 
 .header {
    height: 5rem;   
    width: 100%;
-  
+ margin: 0 auto;
    padding-top:.5rem ;
    text-align: center;
    color: $fontColor;
-   background: linear-gradient(-45deg, #ce5151, #552099, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 20s ease infinite;
+
 }
+@media (max-width: 768px) {
+	.header{
+	  margin: 2rem auto;
+	  display: inline;
+	  
+
+	}
+    
+    }
+    
 
 @keyframes gradient {
 	0% {
@@ -29,3 +57,4 @@ h1{
 		background-position: 0% 50%;
 	}
 }
+
